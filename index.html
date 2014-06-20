@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+</head>
+<body>
+	<div id="app">
+
+
+	</div>
+
+</body>
+</html>
+
+<script type="text/template" id="domEditor">
+	<h1>DOM Editor</h1>
+	<div id="domEditor">
+		<div id="snippetEditorContainer">
+
+		</div>
+		<div id="HtmlSnippetsListContainer">
+
+		</div>
+	</div>
+</script>
+
+<script type="text/template" id="snippetEditor">
+	<form id="snippetForm">
+		<label>Title</label>
+		<input type='text' name="title">
+		<label>Html Snippet</label>
+		<input type='text' name="code">
+		<label>Associated Url</label>
+		<input type='text' name="associatedUrl">
+		<label>Element</label>
+		<input type='text' name="element">
+		<button id='addSnippet'>Add Snippet</button>
+	</form>
+</script>
+
+<script type="text/template" id="HtmlSnippetsList">
+	<h2>List of HTML Snippets</h2>
+	<table>
+		<tr>
+			<th>Title</th>
+			<th>Code</th>
+			<th>Assocaited Url</th>
+			<th>Target Element</th>
+		</tr>
+		<% _.each(htmlSnippets, function(htmlSnippet) { %>  
+			<tr>
+				<td>	<%= htmlSnippet.get('title') %></td>
+				<td>	<%= htmlSnippet.get('code') %></td>
+				<td>	<%= htmlSnippet.get('associatedUrl') %></td>
+				<td>	<%= htmlSnippet.get('element') %></td>
+			</tr>
+		<% }); %>		
+		</table>
+</script>
+
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+  <script src="app.js"></script>
